@@ -1,0 +1,64 @@
+{% load static %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="{% static 'blog/style.css'%}" >
+<link rel="stylesheet" href="{% static 'blog/create.css'%}" >
+<style>
+    .label
+{
+ color:#ffffff;
+}
+
+</style>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="{% url 'post_list' %}" class="navbar-brand">EduHub</a>
+</nav>
+<br>
+<br>
+<div class="container bg-dark">
+    <div class="row">
+    <div class="col-lg-6 col-centered">
+  <form  method="POST">
+    {% csrf_token %}
+      <div class="label" >Title</div>
+    {{form.title}}
+
+
+    <div class="label" >Body</div>
+       {{ form.body }}
+       <div class="label" >Image</div>
+
+      <div class="label" > {{ form.image}}</div>
+      <br>
+
+      <div class="label" > Status</div>
+     {{form.status}}
+    <input type="submit" value="Update" class="btn btn-success">
+  </form>
+</div>
+    </div>
+</div>
+<br>
+<br>
+</body>

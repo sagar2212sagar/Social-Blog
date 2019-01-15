@@ -1,0 +1,69 @@
+{% load static %}
+<html lang="en" class="full-height">
+<head>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<link rel="stylesheet" href="{% static 'blog/login.css'%}" >
+<body>
+<!--Main Navigation-->
+
+
+  <nav class="navbar navbar-dark bg-primary navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'post_list' %}">EduHub</a>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<div class="container">
+<div class="row">
+    <div class="col-lg-6 col-centered">
+<form  method="POST" class="border border p-4">
+{% csrf_token %}
+    <p class="h4 mb-4">Sign in</p>
+
+    <!-- Email -->
+    <label><b>Username</b></label>
+    {{form.username }}
+
+    <label><b>Password</b></label>
+     {{form.password }}
+
+
+    <div class="d-flex justify-content-around">
+
+        <div>
+            <!-- Forgot password -->
+            <a href="">Forgot password?</a>
+        </div>
+    </div>
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+    <!-- Register -->
+    <p>Not a member?
+        <a href="{% url 'register' %}">Register</a>
+    </p>
+
+    <!-- Social login -->
+
+    <!-- Terms of service -->
+
+</form>
+</div>
+    </div>
+
+</div>
+</body>
+
+</html>
